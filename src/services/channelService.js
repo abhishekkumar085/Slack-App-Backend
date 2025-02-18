@@ -55,3 +55,15 @@ export const getChannelByIdService = async (channelId, userId) => {
     throw error;
   }
 };
+
+export const editChannelByIdService = async (channelId, data) => {
+  try {
+    
+    const response = await channelRepository.updateChannelRepository(channelId, data);
+    console.log("SERVICE_RESPONSE",response)
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
